@@ -38,3 +38,16 @@ Feature: verify login functionality
     |usr1    |pwd1    |
     |usr2    |pwd2    |
 
+  @Tc5
+  Scenario Outline: Verify login with invalid cred
+    Given user is on crowd4Test app
+    When user clicks on login button
+    Then login page is displayed
+    And user enters "<username>" username
+    And user enters "<password>" password
+    Then user will be logged in successfully
+    Examples:
+      |username|password|
+      |usr1    |pwd1    |
+      |usr2    |pwd2    |
+
